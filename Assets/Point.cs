@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Point : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class Point : MonoBehaviour
         // Перемещаем точку по окружности, учитывая направление и скорость перемещения
         transform.position = circleCenter.position + direction * moveSpeed * Time.deltaTime;
 
-        //изменение размера
-        //this.transform.localScale = new Vector3((int)ProgressBar.SizeCat, (int)ProgressBar.SizeCat, 0f);
+
     }
 }
