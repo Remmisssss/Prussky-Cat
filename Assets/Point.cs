@@ -26,8 +26,6 @@ public class Point : MonoBehaviour
         transform.position = circleCenter.position + direction * moveSpeed * Time.deltaTime;
 
         //изменение размера
-        int boy = (int)ProgressBar.SizeCat;
-
-        this.transform.localScale = new Vector3((int)ProgressBar.SizeCat, (int)ProgressBar.SizeCat, 0f);
+        //this.transform.localScale = new Vector3((int)ProgressBar.SizeCat, (int)ProgressBar.SizeCat, 0f);
     }
 }
