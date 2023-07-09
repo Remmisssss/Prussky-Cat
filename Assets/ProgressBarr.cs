@@ -14,16 +14,19 @@ public class ProgressBar : MonoBehaviour
     public Slider progressBar;
     private int currentValue = 1;
     private bool isFilling = false;
-    static public bool isInWater; // соприкасается с водой
+    public static bool isInWater; // соприкасается с водой
+
+    public string targetTag; // Тег объектов, с которыми нужно проверить соприкосновение
+
 
     public enum SizeCat // размеры Кота
     {
-        Little = 1,
-        Middle = 2,
-        Big = 3
+        Little = 10,
+        Middle = 20,
+        Big = 30
     }
 
-    public SizeCat sizeCat;
+    public static SizeCat sizeCat = SizeCat.Little;
 
 
     private void Start()
@@ -37,10 +40,6 @@ public class ProgressBar : MonoBehaviour
 
 
     }
-
-    
-
-    public string targetTag; // Тег объектов, с которыми нужно проверить соприкосновение
 
    
 
@@ -88,13 +87,18 @@ public class ProgressBar : MonoBehaviour
                     dropSpawner.enabled = false;
                 }
 
-
-
             }
         }
 
+        //изменение размеров кота
+        if (currentValue <= (int) SizeCat.Little)
+            sizeCat = SizeCat.Little;
+        if (currentValue > (int)SizeCat.Little && currentValue <= (int)SizeCat.Middle)
+            sizeCat = SizeCat.Middle;
+        if(currentValue > (int)SizeCat.Middle)
+            sizeCat = SizeCat.Big;
 
-      
+         
     }
 
     private IEnumerator UpdateProgressBar()
