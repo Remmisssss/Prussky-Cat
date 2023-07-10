@@ -61,19 +61,7 @@ public class CircleLookAtMouse : MonoBehaviour
             // Update the circle's position
             transform.position = newPosition;
         }
-
-
-        //изменение размера
-        var sizeX = transform.localScale.x;
-        var sizeY = transform.localScale.y;
-
-
-        this.transform.localScale = new Vector3(
-            (int)ProgressBar.sizeCat / 10 * sizeX,
-            (int)ProgressBar.sizeCat / 10 * sizeY,
-            0f);
     }
-
 
     private void FixedUpdate()
     {
@@ -95,6 +83,4 @@ public class CircleLookAtMouse : MonoBehaviour
             canJump = true;
         }
     }
-
-
 }
